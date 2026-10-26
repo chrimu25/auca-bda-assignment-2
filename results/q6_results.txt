@@ -1,0 +1,35 @@
+
+=== Set A: account 998 | SQL cycles 1 | Cypher cycles 1 | identical True
+  cycle of 4 transfers: [20000001, 20000002, 20000003, 20000004]
+    20000001: 998 -> 8917  2026-09-06 10:00:00 CAT  200,000 RWF
+    20000002: 8917 -> 16836  2026-09-06 10:00:40 CAT  196,000 RWF
+    20000003: 16836 -> 24755  2026-09-06 10:01:20 CAT  192,080 RWF
+    20000004: 24755 -> 998  2026-09-06 10:02:00 CAT  188,238 RWF
+    span 120 s (limit 1800)
+
+=== Set B: account 147228 | SQL cycles 0 | Cypher cycles 0 | identical True
+
+=== Set C: account 206978 | SQL cycles 1 | Cypher cycles 1 | identical True
+  cycle of 6 transfers: [20000229, 20000230, 20000231, 20000232, 20000233, 20000234]
+    20000229: 206978 -> 214897  2026-09-08 10:00:42 CAT  300,000 RWF
+    20000230: 214897 -> 222816  2026-09-08 10:01:22 CAT  294,000 RWF
+    20000231: 222816 -> 230735  2026-09-08 10:02:02 CAT  288,120 RWF
+    20000232: 230735 -> 238654  2026-09-08 10:02:42 CAT  282,357 RWF
+    20000233: 238654 -> 6573  2026-09-08 10:03:22 CAT  276,710 RWF
+    20000234: 6573 -> 206978  2026-09-08 10:04:02 CAT  271,176 RWF
+    span 200 s (limit 1800)
+
+=== Set D: account 237998 | SQL cycles 0 | Cypher cycles 0 | identical True
+
+=== Set E: account 144228 | SQL cycles 0 | Cypher cycles 0 | identical True
+
+=== Set F: account 203978 | SQL cycles 0 | Cypher cycles 0 | identical True
+
+=== Q6 SUMMARY ===
+A       998  SQL 1  Cypher 1  identical YES
+B    147228  SQL 0  Cypher 0  identical YES
+C    206978  SQL 1  Cypher 1  identical YES
+D    237998  SQL 0  Cypher 0  identical YES
+E    144228  SQL 0  Cypher 0  identical YES
+F    203978  SQL 0  Cypher 0  identical YES
+All sets identical: True

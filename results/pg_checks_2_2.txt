@@ -1,0 +1,81 @@
+Pager usage is off.
+================ Row counts against capture.py ================
+   table_name    |  loaded  | expected | ok 
+-----------------+----------+----------+----
+ customers       |   228000 |   228000 | t
+ accounts        |   248000 |   248000 | t
+ devices         |   228600 |   228600 | t
+ account_devices |   285600 |   285600 | t
+ transfers       | 20003300 | 20003300 | t
+(5 rows)
+
+================ Transfer audit against capture.py ================
+ transfers | min_occurred_at | max_occurred_at |        min_cat         |        max_cat         | sum_amount_rwf | audit_matches_capture 
+-----------+-----------------+-----------------+------------------------+------------------------+----------------+-----------------------
+  20003300 |      1788235200 |      1790798399 | 2026-09-01 06:00:00+02 | 2026-09-30 21:59:59+02 |   231482327870 | t
+(1 row)
+
+================ Account roles ================
+   role   | accounts | expected 
+----------+----------+----------
+ agent    |     2000 |     2000
+ merchant |     6000 |     6000
+ person   |   240000 |   240000
+(3 rows)
+
+================ Constraints (all must be validated) ================
+   table_name    |         constraint_name          |    type     | validated |                                  definition                                   
+-----------------+----------------------------------+-------------+-----------+-------------------------------------------------------------------------------
+ account_devices | account_devices_days_chk         | CHECK       | t         | CHECK (((0 <= first_day) AND (first_day <= last_day) AND (last_day <= 29)))
+ account_devices | account_devices_observations_chk | CHECK       | t         | CHECK ((observations > 0))
+ account_devices | account_devices_account_fk       | FOREIGN KEY | t         | FOREIGN KEY (account_id) REFERENCES accounts(account_id)
+ account_devices | account_devices_device_fk        | FOREIGN KEY | t         | FOREIGN KEY (device_id) REFERENCES devices(device_id)
+ account_devices | account_devices_pkey             | PRIMARY KEY | t         | PRIMARY KEY (account_id, device_id)
+ accounts        | accounts_role_chk                | CHECK       | t         | CHECK ((role = ANY (ARRAY['person'::text, 'merchant'::text, 'agent'::text])))
+ accounts        | accounts_customer_fk             | FOREIGN KEY | t         | FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+ accounts        | accounts_pkey                    | PRIMARY KEY | t         | PRIMARY KEY (account_id)
+ customers       | customers_pkey                   | PRIMARY KEY | t         | PRIMARY KEY (customer_id)
+ devices         | devices_access_type_chk          | CHECK       | t         | CHECK ((access_type = ANY (ARRAY['handset'::text, 'public_terminal'::text])))
+ devices         | devices_pkey                     | PRIMARY KEY | t         | PRIMARY KEY (device_id)
+ transfers       | transfers_amount_chk             | CHECK       | t         | CHECK ((amount_rwf > 0))
+ transfers       | transfers_receiver_fk            | FOREIGN KEY | t         | FOREIGN KEY (receiver_id) REFERENCES accounts(account_id)
+ transfers       | transfers_sender_fk              | FOREIGN KEY | t         | FOREIGN KEY (sender_id) REFERENCES accounts(account_id)
+ transfers       | transfers_pkey                   | PRIMARY KEY | t         | PRIMARY KEY (transfer_id)
+(15 rows)
+
+ not_null_columns 
+------------------
+               17
+(1 row)
+
+================ Indexes ================
+    tablename    |            indexname            |                                                                     indexdef                                                                     
+-----------------+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------
+ account_devices | account_devices_device_acct_idx | CREATE INDEX account_devices_device_acct_idx ON public.account_devices USING btree (device_id, account_id)
+ account_devices | account_devices_pkey            | CREATE UNIQUE INDEX account_devices_pkey ON public.account_devices USING btree (account_id, device_id)
+ accounts        | accounts_customer_account_idx   | CREATE INDEX accounts_customer_account_idx ON public.accounts USING btree (customer_id, account_id)
+ accounts        | accounts_pkey                   | CREATE UNIQUE INDEX accounts_pkey ON public.accounts USING btree (account_id)
+ customers       | customers_pkey                  | CREATE UNIQUE INDEX customers_pkey ON public.customers USING btree (customer_id)
+ devices         | devices_pkey                    | CREATE UNIQUE INDEX devices_pkey ON public.devices USING btree (device_id)
+ transfers       | transfers_occurred_brin         | CREATE INDEX transfers_occurred_brin ON public.transfers USING brin (occurred_at)
+ transfers       | transfers_pkey                  | CREATE UNIQUE INDEX transfers_pkey ON public.transfers USING btree (transfer_id)
+ transfers       | transfers_receiver_time_idx     | CREATE INDEX transfers_receiver_time_idx ON public.transfers USING btree (receiver_id, occurred_at) INCLUDE (sender_id, amount_rwf, transfer_id)
+ transfers       | transfers_sender_time_idx       | CREATE INDEX transfers_sender_time_idx ON public.transfers USING btree (sender_id, occurred_at) INCLUDE (receiver_id, amount_rwf, transfer_id)
+(10 rows)
+
+================ Sizes (GB = 1,000,000,000 bytes) ================
+   table_name    | data_gb | index_gb | total_gb 
+-----------------+---------+----------+----------
+ ALL FIVE TABLES |  1.2504 |   2.4679 |   3.7183
+ account_devices |  0.0129 |   0.0129 |   0.0258
+ accounts        |  0.0113 |   0.0112 |   0.0225
+ customers       |  0.0103 |   0.0051 |   0.0154
+ devices         |  0.0103 |   0.0052 |   0.0154
+ transfers       |  1.2057 |   2.4335 |   3.6392
+(6 rows)
+
+ database_size_gb 
+------------------
+           3.7261
+(1 row)
+

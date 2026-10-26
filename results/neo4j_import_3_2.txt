@@ -1,0 +1,159 @@
+Starting to import, the following output will be saved in the directory: /opt/homebrew/var/log/neo4j/neo4j-admin-import-2026-10-23.11.54.52
+  Logging information: import.log
+  Detailed progress reporting (JSON formatted): progress.json.log
+  Import data errors / violations (JSON formatted): report.json.log
+
+NOTE this directory will be cleared on the completion of a successful import.
+
+Neo4j version: 2026.10.0
+Importing the contents of these files into /opt/homebrew/var/neo4j/data/databases/neo4j:
+Nodes:
+  [Customer]:
+  /Volumes/Winner/AUCA/Big Data Analytics/Group_Assignment__02/import/customers.csv
+
+  [Account]:
+  /Volumes/Winner/AUCA/Big Data Analytics/Group_Assignment__02/import/accounts.csv
+
+  [Device]:
+  /Volumes/Winner/AUCA/Big Data Analytics/Group_Assignment__02/import/devices.csv
+
+Relationships:
+  OWNS:
+  /Volumes/Winner/AUCA/Big Data Analytics/Group_Assignment__02/import/owns.csv
+
+  USED_DEVICE:
+  /Volumes/Winner/AUCA/Big Data Analytics/Group_Assignment__02/import/used_device.csv
+
+  TRANSFER:
+  /Volumes/Winner/AUCA/Big Data Analytics/Group_Assignment__02/import/transfers.csv
+
+
+Available resources:
+  Total machine memory: 16.00GiB
+  Free machine memory: 352.9MiB
+  Max heap memory : 3.556GiB
+  Max worker threads: 8
+  Configured max memory: 220.8MiB
+  High parallel IO: true
+
+Cypher type normalization is enabled (disable with --normalize-types=false):
+  Property type of 'first_day' normalized from 'int' --> 'long' in /Volumes/Winner/AUCA/Big Data Analytics/Group_Assignment__02/import/used_device.csv
+  Property type of 'last_day' normalized from 'int' --> 'long' in /Volumes/Winner/AUCA/Big Data Analytics/Group_Assignment__02/import/used_device.csv
+  Property type of 'observations' normalized from 'int' --> 'long' in /Volumes/Winner/AUCA/Big Data Analytics/Group_Assignment__02/import/used_device.csv
+  Property type of 'amount_rwf' normalized from 'int' --> 'long' in /Volumes/Winner/AUCA/Big Data Analytics/Group_Assignment__02/import/transfers.csv
+
+Import starting 2026-10-23 11:54:54.958+0200
+  Estimated number of nodes: 706.10 k
+  Estimated number of node properties: 1.41 M
+  Estimated number of relationships: 21.86 M
+  Estimated number of relationship properties: 64.84 M
+  Estimated disk space usage: 1.555GiB
+  Estimated required memory usage: 1022MiB
+
+(1/4) Node import 2026-10-23 11:54:54.965+0200
+  Estimated number of nodes: 706.10 k
+  Estimated disk space usage: 38.38MiB
+  Estimated required memory usage: 1022MiB
+.......... ........-. .......... .......... ..........   5% ∆1s 3ms [1s 3ms] 
+.......... .......... .......... .......... ..........  10% ∆0ms [1s 3ms] 
+.......... .......... .......... .......... ..........  15% ∆0ms [1s 3ms] 
+.......... .......... .......... .......... ..........  20% ∆162ms [1s 166ms] 
+.......... .......... .......... .......... ..........  25% ∆0ms [1s 166ms] 
+.......... .......... .......... .......... ..........  30% ∆0ms [1s 166ms] 
+.......... .......... .......... .......... ..........  35% ∆0ms [1s 166ms] 
+.......... .......... .......... .......... ..........  40% ∆0ms [1s 166ms] 
+.......... .......... .......... .......... ..........  45% ∆0ms [1s 166ms] 
+.......... .......... .......... .......... ..........  50% ∆0ms [1s 166ms] 
+.......... .......... .......... .......... ..........  55% ∆0ms [1s 166ms] 
+.......... .......... .......... .......... ..........  60% ∆0ms [1s 167ms] 
+.......... .......... .......... .......... ..........  65% ∆0ms [1s 167ms] 
+.......... .......... .......... .......... ..........  70% ∆0ms [1s 167ms] 
+.......... .......... .......... .......... ..........  75% ∆0ms [1s 167ms] 
+.......... .......... .......... .......... ..........  80% ∆0ms [1s 167ms] 
+.......... .......... .......... .......... ..........  85% ∆0ms [1s 167ms] 
+.......... .......... .......... .......... ..........  90% ∆0ms [1s 167ms] 
+.......... .......... .......... .......... ..........  95% ∆0ms [1s 167ms] 
+.......... .......... .......... .......... .......... 100% ∆0ms [1s 167ms] 
+Node import COMPLETED in 1s 169ms
+
+(2/4) Relationship import 2026-10-23 11:54:56.135+0200
+  Estimated number of relationships: 21.86 M
+  Estimated disk space usage: 1.517GiB
+  Estimated required memory usage: 1023MiB
+.......... .......... .......... .......... ..........   5% ∆1s 432ms [1s 432ms] 
+.......... .......... .......... .......... ..........  10% ∆201ms [1s 633ms] 
+.......... .......... .......... .......... ..........  15% ∆410ms [2s 44ms] 
+.......... .......... .......... .......... ..........  20% ∆409ms [2s 453ms] 
+.......... .......... .......... .......... ..........  25% ∆402ms [2s 856ms] 
+.......... .......... .......... .......... ..........  30% ∆409ms [3s 265ms] 
+.......... .......... .......... .......... ..........  35% ∆416ms [3s 681ms] 
+.......... .......... .......... .......... ..........  40% ∆406ms [4s 88ms] 
+.......... .......... .......... .......... ..........  45% ∆203ms [4s 291ms] 
+.......... .......... .......... .......... ..........  50% ∆410ms [4s 702ms] 
+.......... .......... .......... .......... ..........  55% ∆409ms [5s 111ms] 
+.......... .......... .......... .......... ..........  60% ∆409ms [5s 520ms] 
+.......... .......... .......... .......... ..........  65% ∆407ms [5s 927ms] 
+.......... .......... .......... .......... ..........  70% ∆411ms [6s 339ms] 
+.......... .......... .......... .......... ..........  75% ∆401ms [6s 741ms] 
+.......... .......... .......... .......... ..........  80% ∆613ms [7s 355ms] 
+.......... .......... .......... .......... ..........  85% ∆207ms [7s 562ms] 
+.......... .......... .......... .......... ..........  90% ∆409ms [7s 971ms] 
+.......... .......... .......... .......... ..........  95% ∆284ms [8s 256ms] 
+.......... .......... .......... .......... .......... 100% ∆0ms [8s 256ms] 
+Relationship import COMPLETED in 8s 256ms
+
+(3/4) Relationship linking 2026-10-23 11:55:04.391+0200
+  Estimated required memory usage: 1019MiB
+.......... .......... .......... .......... ..........   5% ∆613ms [613ms] 
+.......... .......... .......... .......... ..........  10% ∆406ms [1s 20ms] 
+.......... .......... .......... .......... ........-.  15% ∆620ms [1s 640ms] 
+......--.. -......... .......... .......... ..........  20% ∆3s 849ms [5s 489ms] 
+.......... .......... .......... .......... ..........  25% ∆610ms [6s 99ms] 
+.......... .......... .......... .......... ..........  30% ∆202ms [6s 302ms] 
+.......... .......... .......... .......... ..........  35% ∆405ms [6s 707ms] 
+.......... .......... .......... .......... ..........  40% ∆205ms [6s 913ms] 
+.......... .......... .......... .......... ..........  45% ∆673ms [7s 586ms] 
+.......... .......... .......... .......... ..........  50% ∆0ms [7s 586ms] 
+.......... .......... .......-.. .......... ..........  55% ∆549ms [8s 136ms] 
+.......... .......... .......... .......... ..........  60% ∆445ms [8s 581ms] 
+.......... .......... .......... .......... ..........  65% ∆205ms [8s 787ms] 
+.......... .......... .......... .......... ..........  70% ∆202ms [8s 989ms] 
+.......... .......... .......... .......... ..........  75% ∆405ms [9s 395ms] 
+.......... .......... .......... .......... ..........  80% ∆203ms [9s 599ms] 
+.......... .......... .......... .......... ..........  85% ∆445ms [10s 44ms] 
+.......... .......... .......... .......... ..........  90% ∆0ms [10s 44ms] 
+.......... .......... .......... .......... ..........  95% ∆38ms [10s 82ms] 
+.......... .......... .......... .......... .......... 100% ∆0ms [10s 82ms] 
+Relationship linking COMPLETED in 10s 83ms
+
+(4/4) Post processing 2026-10-23 11:55:14.474+0200
+  Estimated required memory usage: 1012MiB
+-......... .......... .......... .......... ..........   5% ∆1s 67ms [1s 67ms] 
+.......... .......... .......... .......... ..........  10% ∆0ms [1s 67ms] 
+.......... .......... .......... .......... ..........  15% ∆204ms [1s 272ms] 
+.......... .......... .......... .......... ..........  20% ∆0ms [1s 272ms] 
+.......... .......... .......... .......... ..........  25% ∆204ms [1s 476ms] 
+.......... .......... .......... .......... ..........  30% ∆0ms [1s 476ms] 
+.......... .......... .......... .......... ..........  35% ∆205ms [1s 681ms] 
+.......... .......... .......... .......... ..........  40% ∆0ms [1s 681ms] 
+.......... .......... .......... .......... ..........  45% ∆0ms [1s 681ms] 
+.......... .......... .......... .......... ..........  50% ∆201ms [1s 883ms] 
+.......... .......... .......... .......... ..........  55% ∆0ms [1s 883ms] 
+.......... .......... .......... .......... ..........  60% ∆0ms [1s 883ms] 
+.......... .......... .......... .......... ..........  65% ∆0ms [1s 883ms] 
+.......... .......... .......... .......... ..........  70% ∆231ms [2s 115ms] 
+.......... .......... .......... .......... ..........  75% ∆0ms [2s 115ms] 
+.......... .......... .......... .......... ..........  80% ∆0ms [2s 115ms] 
+.......... .......... .......... .......... ..........  85% ∆0ms [2s 115ms] 
+.......... .......... .......... .......... ..........  90% ∆0ms [2s 115ms] 
+.......... .......... .......... .......... ..........  95% ∆0ms [2s 115ms] 
+.......... .......... .......... .......... .......... 100% ∆0ms [2s 115ms] 
+Post processing COMPLETED in 2s 115ms
+
+
+IMPORT DONE in 22s 723ms. 
+Imported:
+  704600 nodes
+  20536900 relationships
+  62275900 properties
+Peak memory usage: 1.014GiB

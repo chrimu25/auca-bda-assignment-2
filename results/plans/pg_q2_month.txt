@@ -1,0 +1,29 @@
+Finalize GroupAggregate  (cost=516833.74..724762.13 rows=393105 width=20) (actual time=1672.519..1673.687 rows=30 loops=1)
+  Group Key: (((to_timestamp((occurred_at)::double precision) AT TIME ZONE 'Africa/Kigali'::text))::date)
+  Buffers: shared hit=4966 read=142202
+  ->  Gather Merge  (cost=516833.74..705106.88 rows=1572420 width=20) (actual time=1672.504..1673.643 rows=150 loops=1)
+        Workers Planned: 4
+        Workers Launched: 4
+        Buffers: shared hit=4966 read=142202
+        ->  Sort  (cost=515833.68..516816.44 rows=393105 width=20) (actual time=1661.474..1661.477 rows=30 loops=5)
+              Sort Key: (((to_timestamp((occurred_at)::double precision) AT TIME ZONE 'Africa/Kigali'::text))::date)
+              Sort Method: quicksort  Memory: 26kB
+              Buffers: shared hit=4966 read=142202
+              Worker 0:  Sort Method: quicksort  Memory: 26kB
+              Worker 1:  Sort Method: quicksort  Memory: 26kB
+              Worker 2:  Sort Method: quicksort  Memory: 26kB
+              Worker 3:  Sort Method: quicksort  Memory: 26kB
+              ->  Partial HashAggregate  (cost=427651.03..474582.07 rows=393105 width=20) (actual time=1659.150..1661.435 rows=30 loops=5)
+                    Group Key: ((to_timestamp((occurred_at)::double precision) AT TIME ZONE 'Africa/Kigali'::text))::date
+                    Batches: 1  Memory Usage: 12313kB
+                    Buffers: shared hit=4934 read=142202
+                    Worker 0:  Batches: 1  Memory Usage: 12313kB
+                    Worker 1:  Batches: 1  Memory Usage: 12313kB
+                    Worker 2:  Batches: 1  Memory Usage: 12313kB
+                    Worker 3:  Batches: 1  Memory Usage: 12313kB
+                    ->  Parallel Seq Scan on transfers  (cost=0.00..247152.50 rows=5000825 width=8) (actual time=0.768..1365.934 rows=4000660 loops=5)
+                          Buffers: shared hit=4934 read=142202
+Planning:
+  Buffers: shared hit=171
+Planning Time: 3.748 ms
+Execution Time: 1677.041 ms

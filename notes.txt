@@ -1,0 +1,15 @@
+I updated Neo4j heap initial size to 4g, max_size to 4g from 512m and pagecache.size to 3g from 10g to give us enough 
+headroom.
+pagecache holds graph store in RAM, we couldn't set it to 10 because it was to big but 3GB is enough for this project
+
+1.2
+=============
+capture.py imports the generator as g, prints g.dataset_info() and g.FIELDS, and previews ten records from 
+each iter_<stream>() using itertools.islice on fresh iterators. It then writes each stream to CSV 
+with csv.DictWriter (header first, one row at a time), so no stream is held in memory, and logs progress every 
+million transfers.
+
+2.1
+====
+since zsh doesn't split variables, i ran into spaces issue which was fixed by using function instead.
+instead of zsh looking for single program named: /Library/PostgreSQL/17/bin/psql -h localhost …, it will now look for psqlmm function

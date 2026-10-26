@@ -1,0 +1,73 @@
+
+=== Set A: review account 998 | SQL rows 4 | Cypher rows 4 | identical True
+ other_account  device_id  access_type      overlap_start overlap_end
+          8917     228001  handset                      0          29
+         16836     228001  handset                      0          29
+         24755     228001  handset                      0          29
+        220998        998  handset                      0          29
+
+=== Set B: review account 147228 | SQL rows 9 | Cypher rows 9 | identical True
+ other_account  device_id  access_type      overlap_start overlap_end
+        147226     147226  handset                      0          29
+        147227     147226  handset                      0          29
+        147229     147226  handset                      0          29
+        147230     147226  handset                      0          29
+        155147     228018  handset                      0          29
+        163066     228018  handset                      0          29
+        170985     228018  handset                      0          29
+        178904     228018  handset                      0          29
+        186823     228018  handset                      0          29
+
+=== Set C: review account 206978 | SQL rows 9 | Cypher rows 9 | identical True
+ other_account  device_id  access_type      overlap_start overlap_end
+          6573     228043  handset                      0          29
+        206976     206976  handset                     11          29
+        206977     206976  handset                      0          29
+        206979     206976  handset                      0          29
+        206980     206976  handset                      0          29
+        214897     228043  handset                      0          29
+        222816     228043  handset                      0          29
+        230735     228043  handset                      0          29
+        238654     228043  handset                      0          29
+
+=== Set D: review account 237998 | SQL rows 4 | Cypher rows 4 | identical True
+ other_account  device_id  access_type      overlap_start overlap_end
+          5917     228301  handset                      0          29
+         13836     228301  handset                      0          29
+         17998      17998  handset                      0          29
+         21755     228301  handset                      0          29
+
+=== Set E: review account 144228 | SQL rows 9 | Cypher rows 9 | identical True
+ other_account  device_id  access_type      overlap_start overlap_end
+        144226     144226  handset                      0          29
+        144227     144226  handset                      0          29
+        144229     144226  handset                      0          29
+        144230     144226  handset                      0          29
+        152147     228318  handset                      0          29
+        160066     228318  handset                      0          29
+        167985     228318  handset                      0          29
+        175904     228318  handset                      0          29
+        183823     228318  handset                      0          29
+
+=== Set F: review account 203978 | SQL rows 9 | Cypher rows 9 | identical True
+ other_account  device_id  access_type      overlap_start overlap_end
+          3573     228343  handset                      0          29
+        203976     203976  handset                     11          29
+        203977     203976  handset                      0          29
+        203979     203976  handset                      0          29
+        203980     203976  handset                      0          29
+        211897     228343  handset                      0          29
+        219816     228343  handset                      0          29
+        227735     228343  handset                      0          29
+        235654     228343  handset                      0          29
+
+=== Q3 SUMMARY ===
+set   account  SQL rows  Cypher rows  identical
+A         998         4            4  YES
+B      147228         9            9  YES
+C      206978         9            9  YES
+D      237998         4            4  YES
+E      144228         9            9  YES
+F      203978         9            9  YES
+Total rows: 44 | all sets identical: True
+Saved results/q3_shared_devices.csv

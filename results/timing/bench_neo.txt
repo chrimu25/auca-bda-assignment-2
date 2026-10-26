@@ -1,0 +1,25 @@
+6.2 timing | engine neo | 2026-10-25 13:26:08 CAT | 3 warm-ups (180 s) + 5 runs (60 s)
+
+Q1 B         median        3.54 ms  min       3.301  max       3.676  ok 5/5  timeouts 0  errors 0
+Q3 B         median       4.676 ms  min       4.371  max       4.696  ok 5/5  timeouts 0  errors 0
+Q5 B         median       3.325 ms  min        3.18  max       3.866  ok 5/5  timeouts 0  errors 0
+Q6 B         median       4.567 ms  min       4.121  max       4.993  ok 5/5  timeouts 0  errors 0
+Q1 E         median       2.537 ms  min       2.174  max       3.062  ok 5/5  timeouts 0  errors 0
+Q3 E         median       3.519 ms  min       3.485  max        3.89  ok 5/5  timeouts 0  errors 0
+Q5 E         median       2.451 ms  min       2.308  max       2.767  ok 5/5  timeouts 0  errors 0
+Q6 E         median       2.424 ms  min       2.309  max       2.911  ok 5/5  timeouts 0  errors 0
+Q2 month     median   23400.718 ms  min   23226.526  max   23807.988  ok 5/5  timeouts 0  errors 0
+Q4 B d4      median       3.243 ms  min       2.925  max       4.548  ok 5/5  timeouts 0  errors 0
+Q4 B d6      median       3.658 ms  min       3.542  max       3.875  ok 5/5  timeouts 0  errors 0
+Q4 B d8      median        3.32 ms  min       2.918  max        3.84  ok 5/5  timeouts 0  errors 0
+Q4 B d10     median       3.255 ms  min       3.127  max       3.326  ok 5/5  timeouts 0  errors 0
+Q4 E d4      median       2.679 ms  min       2.612  max       2.892  ok 5/5  timeouts 0  errors 0
+Q4 E d6      median       3.279 ms  min       2.768  max         3.5  ok 5/5  timeouts 0  errors 0
+Q4 E d8      median       3.096 ms  min       2.793  max       4.285  ok 5/5  timeouts 0  errors 0
+Q4 E d10     median       3.611 ms  min       3.466  max       3.702  ok 5/5  timeouts 0  errors 0
+Q7 B b4      median       7.574 ms  min       6.987  max       9.001  ok 5/5  timeouts 0  errors 0
+Q7 B b6      median       7.497 ms  min       6.755  max       7.667  ok 5/5  timeouts 0  errors 0
+Q7 E b4      median       6.054 ms  min       5.557  max       6.691  ok 5/5  timeouts 0  errors 0
+Q7 E b6      median      11.443 ms  min      11.001  max      12.131  ok 5/5  timeouts 0  errors 0
+
+Session 198.8 s | saved results/timing/raw_neo.csv, summary_neo.csv

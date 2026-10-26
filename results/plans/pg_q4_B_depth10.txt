@@ -1,0 +1,59 @@
+GroupAggregate  (cost=299.22..299.29 rows=4 width=16) (actual time=8.739..8.780 rows=5 loops=1)
+  Group Key: c.region
+  Buffers: shared hit=17656
+  CTE walk
+    ->  Recursive Union  (cost=0.00..266.82 rows=801 width=40) (actual time=0.006..5.484 rows=1187 loops=1)
+          Buffers: shared hit=12458
+          ->  Result  (cost=0.00..0.01 rows=1 width=40) (actual time=0.005..0.005 rows=1 loops=1)
+          ->  Nested Loop  (cost=0.42..25.88 rows=80 width=40) (actual time=0.005..0.464 rows=202 loops=11)
+                Buffers: shared hit=12458
+                ->  WorkTable Scan on walk w_1  (cost=0.00..0.22 rows=3 width=40) (actual time=0.001..0.005 rows=87 loops=11)
+                      Filter: (depth < 10)
+                      Rows Removed by Filter: 21
+                ->  Append  (cost=0.42..8.45 rows=4 width=72) (actual time=0.003..0.005 rows=2 loops=958)
+                      Buffers: shared hit=12458
+                      ->  Index Only Scan using accounts_customer_account_idx on accounts  (cost=0.42..1.91 rows=1 width=72) (actual time=0.001..0.001 rows=0 loops=958)
+                            Index Cond: (customer_id = w_1.id)
+                            Filter: (w_1.kind = 'Customer'::text)
+                            Rows Removed by Filter: 1
+                            Heap Fetches: 0
+                            Buffers: shared hit=2875
+                      ->  Index Scan using accounts_pkey on accounts accounts_1  (cost=0.42..2.64 rows=1 width=72) (actual time=0.001..0.001 rows=0 loops=958)
+                            Index Cond: (account_id = w_1.id)
+                            Filter: (w_1.kind = 'Account'::text)
+                            Rows Removed by Filter: 1
+                            Buffers: shared hit=3832
+                      ->  Index Only Scan using account_devices_pkey on account_devices  (cost=0.42..1.91 rows=1 width=72) (actual time=0.002..0.002 rows=1 loops=958)
+                            Index Cond: (account_id = w_1.id)
+                            Filter: (w_1.kind = 'Account'::text)
+                            Rows Removed by Filter: 1
+                            Heap Fetches: 0
+                            Buffers: shared hit=2875
+                      ->  Index Only Scan using account_devices_device_acct_idx on account_devices account_devices_1  (cost=0.42..1.97 rows=1 width=72) (actual time=0.001..0.001 rows=1 loops=958)
+                            Index Cond: (device_id = w_1.id)
+                            Filter: (w_1.kind = 'Device'::text)
+                            Rows Removed by Filter: 1
+                            Heap Fetches: 0
+                            Buffers: shared hit=2876
+  ->  Sort  (cost=32.40..32.41 rows=4 width=12) (actual time=8.726..8.741 rows=649 loops=1)
+        Sort Key: c.region, w.id
+        Sort Method: quicksort  Memory: 45kB
+        Buffers: shared hit=17656
+        ->  Nested Loop  (cost=0.84..32.36 rows=4 width=12) (actual time=0.148..8.501 rows=649 loops=1)
+              Buffers: shared hit=17650
+              ->  Nested Loop  (cost=0.42..30.58 rows=4 width=8) (actual time=0.128..6.425 rows=649 loops=1)
+                    Buffers: shared hit=15054
+                    ->  CTE Scan on walk w  (cost=0.00..20.03 rows=4 width=4) (actual time=0.125..5.654 rows=649 loops=1)
+                          Filter: ((id <> 147228) AND (kind = 'Account'::text))
+                          Rows Removed by Filter: 538
+                          Buffers: shared hit=12458
+                    ->  Index Scan using accounts_pkey on accounts a  (cost=0.42..2.64 rows=1 width=8) (actual time=0.001..0.001 rows=1 loops=649)
+                          Index Cond: (account_id = w.id)
+                          Buffers: shared hit=2596
+              ->  Index Scan using customers_pkey on customers c  (cost=0.42..0.45 rows=1 width=12) (actual time=0.003..0.003 rows=1 loops=649)
+                    Index Cond: (customer_id = a.customer_id)
+                    Buffers: shared hit=2596
+Planning:
+  Buffers: shared hit=153
+Planning Time: 1.845 ms
+Execution Time: 8.845 ms

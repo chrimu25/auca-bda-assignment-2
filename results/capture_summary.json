@@ -1,0 +1,92 @@
+{
+  "streams": [
+    {
+      "stream": "customers",
+      "csv": "data/customers.csv",
+      "consumed": 228000,
+      "written": 228000,
+      "expected": 228000,
+      "match": true,
+      "start_cat": "2026-10-23T10:44:02+02:00",
+      "end_cat": "2026-10-23T10:44:03+02:00",
+      "seconds": 0.207,
+      "bytes": 3581915,
+      "gb": 0.003582
+    },
+    {
+      "stream": "accounts",
+      "csv": "data/accounts.csv",
+      "consumed": 248000,
+      "written": 248000,
+      "expected": 248000,
+      "match": true,
+      "start_cat": "2026-10-23T10:44:03+02:00",
+      "end_cat": "2026-10-23T10:44:03+02:00",
+      "seconds": 0.525,
+      "bytes": 5212713,
+      "gb": 0.005213
+    },
+    {
+      "stream": "devices",
+      "csv": "data/devices.csv",
+      "consumed": 228600,
+      "written": 228600,
+      "expected": 228600,
+      "match": true,
+      "start_cat": "2026-10-23T10:44:03+02:00",
+      "end_cat": "2026-10-23T10:44:03+02:00",
+      "seconds": 0.229,
+      "bytes": 3554518,
+      "gb": 0.003555
+    },
+    {
+      "stream": "account_devices",
+      "csv": "data/account_devices.csv",
+      "consumed": 285600,
+      "written": 285600,
+      "expected": 285600,
+      "match": true,
+      "start_cat": "2026-10-23T10:44:03+02:00",
+      "end_cat": "2026-10-23T10:44:04+02:00",
+      "seconds": 0.477,
+      "bytes": 6284489,
+      "gb": 0.006284
+    },
+    {
+      "stream": "transfers",
+      "csv": "data/transfers.csv",
+      "consumed": 20003300,
+      "written": 20003300,
+      "expected": 20003300,
+      "match": true,
+      "start_cat": "2026-10-23T10:44:04+02:00",
+      "end_cat": "2026-10-23T10:44:50+02:00",
+      "seconds": 46.437,
+      "bytes": 780197845,
+      "gb": 0.780198,
+      "audit": {
+        "count": 20003300,
+        "min_occurred_at": 1788235200,
+        "max_occurred_at": 1790798399,
+        "sum_amount_rwf": 231482327870,
+        "min_occurred_at_cat": "2026-09-01T06:00:00+02:00",
+        "max_occurred_at_cat": "2026-09-30T21:59:59+02:00"
+      }
+    }
+  ],
+  "total_consumed": 20993500,
+  "total_written": 20993500,
+  "total_expected": 20993500,
+  "total_seconds": 47.876,
+  "total_bytes": 798831480,
+  "total_gb": 0.798831,
+  "transfer_audit": {
+    "count": 20003300,
+    "min_occurred_at": 1788235200,
+    "max_occurred_at": 1790798399,
+    "sum_amount_rwf": 231482327870,
+    "min_occurred_at_cat": "2026-09-01T06:00:00+02:00",
+    "max_occurred_at_cat": "2026-09-30T21:59:59+02:00"
+  },
+  "all_counts_match": true
+}

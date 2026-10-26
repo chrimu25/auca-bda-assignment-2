@@ -1,0 +1,8 @@
+6.3 retiming Q7 V2 | 2026-10-25 13:42:12 CAT | 3 warm-ups + 5 runs
+
+Q7 B b4    V1 median     161.585 ms | V2 median     5.548 ms  min 3.908  max 5.706  ok 5/5 | speed-up 29.1x
+Q7 B b6    V1 median   13815.728 ms | V2 median    27.918 ms  min 25.484  max 30.171  ok 5/5 | speed-up 494.9x
+Q7 E b4    V1 median     170.712 ms | V2 median     2.205 ms  min 2.168  max 2.223  ok 5/5 | speed-up 77.4x
+Q7 E b6    V1 median   14301.728 ms | V2 median    25.951 ms  min 25.255  max 26.838  ok 5/5 | speed-up 551.1x
+
+Saved results/timing/raw_pg_q7v2.csv and summary_pg_q7v2.csv

@@ -1,0 +1,41 @@
+7.1 load test | engine neo | 2026-10-25 13:51:19 CAT | window 15 s | CPU cores 8
+
+Reference answers (Q4_d10): {'A': [('Eastern', 36), ('Kigali', 35), ('Northern', 37), ('Southern', 45), ('Western', 34)], 'B': [('Eastern', 45), ('Kigali', 41), ('Northern', 46), ('Southern', 57), ('Western', 39)], 'C': [('Eastern', 278), ('Kigali', 293), ('Northern', 295), ('Southern', 294), ('Western', 273)]}
+Q4_d10     clients  1 rep 1  thr   413.98/s  median       2.0 ms  p95     4.556 ms  correct 6213/6213  err 0  to 0  active max 1  cpu 25.1%
+Q4_d10     clients  1 rep 2  thr   449.15/s  median      1.85 ms  p95     5.946 ms  correct 6738/6738  err 0  to 0  active max 1  cpu 22.4%
+Q4_d10     clients  1 rep 3  thr   341.97/s  median      2.15 ms  p95     6.783 ms  correct 5130/5130  err 0  to 0  active max 1  cpu 18.8%
+Q4_d10     clients  4 rep 1  thr  3272.96/s  median     0.736 ms  p95     2.101 ms  correct 49101/49101  err 0  to 0  active max 4  cpu 58.7%
+Q4_d10     clients  4 rep 2  thr  2593.35/s  median     0.902 ms  p95     3.362 ms  correct 38904/38904  err 0  to 0  active max 4  cpu 81.4%
+Q4_d10     clients  4 rep 3  thr  3106.59/s  median     0.755 ms  p95     2.267 ms  correct 46605/46605  err 0  to 0  active max 4  cpu 69.3%
+Q4_d10     clients  8 rep 1  thr  3926.61/s  median     1.429 ms  p95     5.124 ms  correct 58941/58941  err 0  to 0  active max 7  cpu 98.7%
+Q4_d10     clients  8 rep 2  thr  3973.18/s  median     1.446 ms  p95      5.18 ms  correct 59628/59628  err 0  to 0  active max 7  cpu 96.5%
+Q4_d10     clients  8 rep 3  thr  4032.66/s  median     1.412 ms  p95     5.111 ms  correct 60567/60567  err 0  to 0  active max 7  cpu 99.5%
+Q4_d10     clients 16 rep 1  thr  3562.83/s  median     2.524 ms  p95     9.253 ms  correct 53589/53589  err 0  to 0  active max 13  cpu 98.9%
+Q4_d10     clients 16 rep 2  thr  3850.24/s  median     1.901 ms  p95     8.484 ms  correct 57897/57897  err 0  to 0  active max 13  cpu 99.0%
+Q4_d10     clients 16 rep 3  thr  3886.53/s  median     1.908 ms  p95     8.173 ms  correct 58428/58428  err 0  to 0  active max 12  cpu 98.9%
+Reference answers (Q7_len_b6): {'A': [(3,)], 'B': [(5,)], 'C': [(5,)]}
+Q7_len_b6  clients  1 rep 1  thr   279.18/s  median     3.676 ms  p95     6.156 ms  correct 4188/4188  err 0  to 0  active max 1  cpu 22.8%
+Q7_len_b6  clients  1 rep 2  thr   263.28/s  median     3.767 ms  p95     6.552 ms  correct 3951/3951  err 0  to 0  active max 1  cpu 28.0%
+Q7_len_b6  clients  1 rep 3  thr   265.20/s  median     3.891 ms  p95     6.373 ms  correct 3981/3981  err 0  to 0  active max 1  cpu 19.4%
+Q7_len_b6  clients  4 rep 1  thr  1314.49/s  median     3.222 ms  p95     4.932 ms  correct 19722/19722  err 0  to 0  active max 4  cpu 54.6%
+Q7_len_b6  clients  4 rep 2  thr  1276.85/s  median     3.305 ms  p95     5.103 ms  correct 19161/19161  err 0  to 0  active max 4  cpu 54.3%
+Q7_len_b6  clients  4 rep 3  thr  1324.45/s  median     3.199 ms  p95     4.889 ms  correct 19875/19875  err 0  to 0  active max 4  cpu 57.4%
+Q7_len_b6  clients  8 rep 1  thr  2378.75/s  median     3.109 ms  p95     6.463 ms  correct 35712/35712  err 0  to 0  active max 8  cpu 99.3%
+Q7_len_b6  clients  8 rep 2  thr  2402.12/s  median     3.034 ms  p95      6.75 ms  correct 36060/36060  err 0  to 0  active max 8  cpu 99.6%
+Q7_len_b6  clients  8 rep 3  thr  2463.30/s  median     3.032 ms  p95     6.313 ms  correct 36981/36981  err 0  to 0  active max 8  cpu 99.7%
+Q7_len_b6  clients 16 rep 1  thr  2432.90/s  median      4.39 ms  p95    17.736 ms  correct 36618/36618  err 0  to 0  active max 13  cpu 99.3%
+Q7_len_b6  clients 16 rep 2  thr  2394.16/s  median     4.694 ms  p95    15.856 ms  correct 36021/36021  err 0  to 0  active max 12  cpu 96.6%
+Q7_len_b6  clients 16 rep 3  thr  2454.68/s  median     4.314 ms  p95    17.701 ms  correct 36900/36900  err 0  to 0  active max 11  cpu 99.7%
+
+=== SUMMARY (median of 3 repetitions) ===
+workload   clients  throughput/s  median ms    p95 ms  errors timeouts
+Q4_d10           1        413.98       2.00      5.95       0        0
+Q4_d10           4       3106.59       0.76      2.27       0        0
+Q4_d10           8       3973.18       1.43      5.12       0        0
+Q4_d10          16       3850.24       1.91      8.48       0        0
+Q7_len_b6        1        265.20       3.77      6.37       0        0
+Q7_len_b6        4       1314.49       3.22      4.93       0        0
+Q7_len_b6        8       2402.12       3.03      6.46       0        0
+Q7_len_b6       16       2432.90       4.39     17.70       0        0
+
+Saved results/load/reps_neo.csv and requests_neo.csv

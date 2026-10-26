@@ -1,0 +1,73 @@
+CTE Scan on back  (cost=2050.86..2051.56 rows=1 width=36) (actual time=16010.718..16010.725 rows=1 loops=1)
+  Filter: (depth = 0)
+  Rows Removed by Filter: 5
+  Buffers: shared hit=60279978, temp written=940
+  CTE fwd
+    ->  Recursive Union  (cost=0.00..1660.55 rows=3221 width=8) (actual time=0.001..15607.159 rows=427955 loops=1)
+          Buffers: shared hit=60059131
+          ->  Result  (cost=0.00..0.01 rows=1 width=8) (actual time=0.000..0.001 rows=1 loops=1)
+          ->  Nested Loop  (cost=0.98..162.83 rows=322 width=8) (actual time=0.776..2065.685 rows=1454813 loops=7)
+                Buffers: shared hit=60059131
+                ->  Nested Loop  (cost=0.56..15.47 rows=333 width=8) (actual time=0.773..306.787 rows=2081265 loops=7)
+                      Buffers: shared hit=1783699
+                      ->  WorkTable Scan on fwd f  (cost=0.00..0.22 rows=3 width=8) (actual time=0.768..2.348 rows=26851 loops=7)
+                            Filter: (depth < 6)
+                            Rows Removed by Filter: 34285
+                      ->  Index Only Scan using transfers_sender_time_idx on transfers t  (cost=0.56..3.97 rows=111 width=8) (actual time=0.004..0.008 rows=78 loops=187957)
+                            Index Cond: (sender_id = f.account_id)
+                            Heap Fetches: 572
+                            Buffers: shared hit=1783699
+                ->  Index Scan using accounts_pkey on accounts r  (cost=0.42..0.44 rows=1 width=4) (actual time=0.001..0.001 rows=1 loops=14568858)
+                      Index Cond: (account_id = t.receiver_id)
+                      Filter: (role = 'person'::text)
+                      Rows Removed by Filter: 0
+                      Buffers: shared hit=58275432
+  CTE fd
+    ->  HashAggregate  (cost=80.52..82.52 rows=200 width=8) (actual time=15770.424..15799.457 rows=239998 loops=1)
+          Group Key: fwd.account_id
+          Batches: 1  Memory Usage: 27681kB
+          Buffers: shared hit=60059131, temp written=940
+          ->  CTE Scan on fwd  (cost=0.00..64.42 rows=3221 width=8) (actual time=0.001..15663.792 rows=427955 loops=1)
+                Buffers: shared hit=60059131, temp written=940
+  CTE target
+    ->  CTE Scan on fd  (cost=0.00..4.50 rows=1 width=4) (actual time=15802.307..15818.175 rows=1 loops=1)
+          Filter: (account_id = 186823)
+          Rows Removed by Filter: 239997
+          Buffers: shared hit=60059131, temp written=940
+  CTE back
+    ->  Recursive Union  (cost=0.04..303.29 rows=31 width=40) (actual time=15818.181..16010.714 rows=6 loops=1)
+          Buffers: shared hit=60279978, temp written=940
+          ->  Result  (cost=0.04..0.05 rows=1 width=40) (actual time=15818.180..15818.181 rows=1 loops=1)
+                One-Time Filter: (InitPlan 5).col1
+                Buffers: shared hit=60059131, temp written=940
+                InitPlan 4
+                  ->  CTE Scan on target  (cost=0.00..0.02 rows=1 width=4) (actual time=0.000..15.869 rows=1 loops=1)
+                InitPlan 5
+                  ->  CTE Scan on target target_1  (cost=0.00..0.02 rows=1 width=0) (actual time=15802.308..15802.308 rows=1 loops=1)
+                        Buffers: shared hit=60059131, temp written=940
+          ->  Nested Loop  (cost=10.00..30.29 rows=3 width=40) (actual time=32.087..32.087 rows=1 loops=6)
+                Buffers: shared hit=220847
+                ->  WorkTable Scan on back b  (cost=0.00..0.22 rows=3 width=40) (actual time=0.000..0.000 rows=1 loops=6)
+                      Filter: (depth > 0)
+                      Rows Removed by Filter: 0
+                ->  Limit  (cost=10.00..10.01 rows=1 width=4) (actual time=38.499..38.499 rows=1 loops=5)
+                      Buffers: shared hit=220847
+                      ->  Sort  (cost=10.00..10.01 rows=1 width=4) (actual time=38.499..38.499 rows=1 loops=5)
+                            Sort Key: t_1.sender_id
+                            Sort Method: top-N heapsort  Memory: 25kB
+                            Buffers: shared hit=220847
+                            ->  Nested Loop  (cost=0.56..9.99 rows=1 width=4) (actual time=22.695..38.493 rows=8 loops=5)
+                                  Buffers: shared hit=220847
+                                  ->  CTE Scan on fd fd_1  (cost=0.00..5.00 rows=1 width=4) (actual time=1.353..8.090 rows=4654 loops=5)
+                                        Filter: (d = (b.depth - 1))
+                                        Rows Removed by Filter: 235344
+                                  ->  Index Only Scan using transfers_sender_time_idx on transfers t_1  (cost=0.56..4.98 rows=1 width=4) (actual time=0.006..0.006 rows=0 loops=23271)
+                                        Index Cond: (sender_id = fd_1.account_id)
+                                        Filter: (receiver_id = b.account_id)
+                                        Rows Removed by Filter: 78
+                                        Heap Fetches: 66
+                                        Buffers: shared hit=220847
+Planning:
+  Buffers: shared hit=27
+Planning Time: 0.246 ms
+Execution Time: 16012.432 ms

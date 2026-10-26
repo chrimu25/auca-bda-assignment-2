@@ -1,0 +1,4 @@
+1.9G	/opt/homebrew/var/neo4j/data/databases/neo4j
+ 16K	/opt/homebrew/var/neo4j/data/transactions/neo4j
+databases: 2055741440 bytes = 1.9145 GB
+transactions: 16384 bytes = 0 GB

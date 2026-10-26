@@ -1,0 +1,14 @@
+customers, accounts, devices, total_nodes, nodes_ok
+228000, 248000, 228600, 704600, TRUE
+owns, used_device, transfer, total_relationships, relationships_ok
+248000, 285600, 20003300, 20536900, TRUE
+role, accounts
+"agent", 2000
+"merchant", 6000
+"person", 240000
+accounts_without_exactly_one_owner
+0
+transfers, distinct_transfer_ids, transfer_id_unique
+20003300, 20003300, TRUE
+transfers, min_occurred_at, max_occurred_at, sum_amount_rwf, audit_matches_capture
+20003300, 1788235200, 1790798399, 231482327870, TRUE

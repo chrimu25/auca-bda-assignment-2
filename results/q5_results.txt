@@ -1,0 +1,33 @@
+
+=== Set A: account 998 | SQL chains 1 | Cypher chains 1 | identical True
+  chain t1=20000001 t2=20000002 t3=20000003 final receiver=24755
+    20000001: 998 -> 8917  2026-09-06 10:00:00 CAT  200,000 RWF
+    20000002: 8917 -> 16836  2026-09-06 10:00:40 CAT  196,000 RWF  +40 s, 98.0% of previous
+    20000003: 16836 -> 24755  2026-09-06 10:01:20 CAT  192,080 RWF  +40 s, 98.0% of previous
+
+=== Set B: account 147228 | SQL chains 1 | Cypher chains 1 | identical True
+  chain t1=20000092 t2=20000093 t3=20000094 final receiver=170985
+    20000092: 147228 -> 155147  2026-09-13 10:00:17 CAT  1,050,000 RWF
+    20000093: 155147 -> 163066  2026-09-13 10:00:57 CAT  1,029,000 RWF  +40 s, 98.0% of previous
+    20000094: 163066 -> 170985  2026-09-13 10:01:37 CAT  1,008,420 RWF  +40 s, 98.0% of previous
+
+=== Set C: account 206978 | SQL chains 1 | Cypher chains 1 | identical True
+  chain t1=20000229 t2=20000230 t3=20000231 final receiver=230735
+    20000229: 206978 -> 214897  2026-09-08 10:00:42 CAT  300,000 RWF
+    20000230: 214897 -> 222816  2026-09-08 10:01:22 CAT  294,000 RWF  +40 s, 98.0% of previous
+    20000231: 222816 -> 230735  2026-09-08 10:02:02 CAT  288,120 RWF  +40 s, 98.0% of previous
+
+=== Set D: account 237998 | SQL chains 0 | Cypher chains 0 | identical True
+
+=== Set E: account 144228 | SQL chains 0 | Cypher chains 0 | identical True
+
+=== Set F: account 203978 | SQL chains 0 | Cypher chains 0 | identical True
+
+=== Q5 SUMMARY ===
+A       998  SQL 1  Cypher 1  identical YES
+B    147228  SQL 1  Cypher 1  identical YES
+C    206978  SQL 1  Cypher 1  identical YES
+D    237998  SQL 0  Cypher 0  identical YES
+E    144228  SQL 0  Cypher 0  identical YES
+F    203978  SQL 0  Cypher 0  identical YES
+All sets identical: True

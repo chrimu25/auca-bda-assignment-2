@@ -1,0 +1,62 @@
+case,question,label,params,sql_rows,cypher_rows,status
+1,Q1,A,"{""account"": 998, ""start"": 1788680700, ""end"": 1788684300}",1,1,MATCH
+2,Q1,B,"{""account"": 147228, ""start"": 1789285500, ""end"": 1789289100}",1,1,MATCH
+3,Q1,C,"{""account"": 206978, ""start"": 1788853500, ""end"": 1788857100}",1,1,MATCH
+4,Q1,D,"{""account"": 237998, ""start"": 1788680700, ""end"": 1788684300}",1,1,MATCH
+5,Q1,E,"{""account"": 144228, ""start"": 1789285500, ""end"": 1789289100}",1,1,MATCH
+6,Q1,F,"{""account"": 203978, ""start"": 1788853500, ""end"": 1788857100}",1,1,MATCH
+7,Q2,month,{},30,30,MATCH
+8,Q3,A,"{""account"": 998}",4,4,MATCH
+9,Q3,B,"{""account"": 147228}",9,9,MATCH
+10,Q3,C,"{""account"": 206978}",9,9,MATCH
+11,Q3,D,"{""account"": 237998}",4,4,MATCH
+12,Q3,E,"{""account"": 144228}",9,9,MATCH
+13,Q3,F,"{""account"": 203978}",9,9,MATCH
+14,Q4,A d4,"{""account"": 998, ""depth"": 4}",2,2,MATCH
+15,Q4,A d6,"{""account"": 998, ""depth"": 6}",5,5,MATCH
+16,Q4,A d8,"{""account"": 998, ""depth"": 8}",5,5,MATCH
+17,Q4,A d10,"{""account"": 998, ""depth"": 10}",5,5,MATCH
+18,Q4,B d4,"{""account"": 147228, ""depth"": 4}",5,5,MATCH
+19,Q4,B d6,"{""account"": 147228, ""depth"": 6}",5,5,MATCH
+20,Q4,B d8,"{""account"": 147228, ""depth"": 8}",5,5,MATCH
+21,Q4,B d10,"{""account"": 147228, ""depth"": 10}",5,5,MATCH
+22,Q4,C d4,"{""account"": 206978, ""depth"": 4}",5,5,MATCH
+23,Q4,C d6,"{""account"": 206978, ""depth"": 6}",5,5,MATCH
+24,Q4,C d8,"{""account"": 206978, ""depth"": 8}",5,5,MATCH
+25,Q4,C d10,"{""account"": 206978, ""depth"": 10}",5,5,MATCH
+26,Q4,D d4,"{""account"": 237998, ""depth"": 4}",3,3,MATCH
+27,Q4,D d6,"{""account"": 237998, ""depth"": 6}",5,5,MATCH
+28,Q4,D d8,"{""account"": 237998, ""depth"": 8}",5,5,MATCH
+29,Q4,D d10,"{""account"": 237998, ""depth"": 10}",5,5,MATCH
+30,Q4,E d4,"{""account"": 144228, ""depth"": 4}",5,5,MATCH
+31,Q4,E d6,"{""account"": 144228, ""depth"": 6}",5,5,MATCH
+32,Q4,E d8,"{""account"": 144228, ""depth"": 8}",5,5,MATCH
+33,Q4,E d10,"{""account"": 144228, ""depth"": 10}",5,5,MATCH
+34,Q4,F d4,"{""account"": 203978, ""depth"": 4}",5,5,MATCH
+35,Q4,F d6,"{""account"": 203978, ""depth"": 6}",5,5,MATCH
+36,Q4,F d8,"{""account"": 203978, ""depth"": 8}",5,5,MATCH
+37,Q4,F d10,"{""account"": 203978, ""depth"": 10}",5,5,MATCH
+38,Q5,A,"{""account"": 998, ""start"": 1788680700, ""end"": 1788684300}",1,1,MATCH
+39,Q5,B,"{""account"": 147228, ""start"": 1789285500, ""end"": 1789289100}",1,1,MATCH
+40,Q5,C,"{""account"": 206978, ""start"": 1788853500, ""end"": 1788857100}",1,1,MATCH
+41,Q5,D,"{""account"": 237998, ""start"": 1788680700, ""end"": 1788684300}",0,0,MATCH
+42,Q5,E,"{""account"": 144228, ""start"": 1789285500, ""end"": 1789289100}",0,0,MATCH
+43,Q5,F,"{""account"": 203978, ""start"": 1788853500, ""end"": 1788857100}",0,0,MATCH
+44,Q6,A,"{""account"": 998, ""start"": 1788680700, ""end"": 1788684300}",1,1,MATCH
+45,Q6,B,"{""account"": 147228, ""start"": 1789285500, ""end"": 1789289100}",0,0,MATCH
+46,Q6,C,"{""account"": 206978, ""start"": 1788853500, ""end"": 1788857100}",1,1,MATCH
+47,Q6,D,"{""account"": 237998, ""start"": 1788680700, ""end"": 1788684300}",0,0,MATCH
+48,Q6,E,"{""account"": 144228, ""start"": 1789285500, ""end"": 1789289100}",0,0,MATCH
+49,Q6,F,"{""account"": 203978, ""start"": 1788853500, ""end"": 1788857100}",0,0,MATCH
+50,Q7,A b4,"{""source"": 998, ""dest"": 24755, ""max_depth"": 4}",1,1,MATCH
+51,Q7,A b6,"{""source"": 998, ""dest"": 24755, ""max_depth"": 6}",1,1,MATCH
+52,Q7,B b4,"{""source"": 147228, ""dest"": 186823, ""max_depth"": 4}",0,1,MATCH
+53,Q7,B b6,"{""source"": 147228, ""dest"": 186823, ""max_depth"": 6}",1,1,MATCH
+54,Q7,C b4,"{""source"": 206978, ""dest"": 6573, ""max_depth"": 4}",0,1,MATCH
+55,Q7,C b6,"{""source"": 206978, ""dest"": 6573, ""max_depth"": 6}",1,1,MATCH
+56,Q7,D b4,"{""source"": 237998, ""dest"": 21755, ""max_depth"": 4}",1,1,MATCH
+57,Q7,D b6,"{""source"": 237998, ""dest"": 21755, ""max_depth"": 6}",1,1,MATCH
+58,Q7,E b4,"{""source"": 144228, ""dest"": 183823, ""max_depth"": 4}",0,1,MATCH
+59,Q7,E b6,"{""source"": 144228, ""dest"": 183823, ""max_depth"": 6}",1,1,MATCH
+60,Q7,F b4,"{""source"": 203978, ""dest"": 3573, ""max_depth"": 4}",0,1,MATCH
+61,Q7,F b6,"{""source"": 203978, ""dest"": 3573, ""max_depth"": 6}",1,1,MATCH

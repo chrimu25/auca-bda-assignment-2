@@ -1,0 +1,8 @@
++ProduceResults@neo4j  rows=30  dbHits=0  day, transfers, total_rwf
+  +Sort@neo4j  rows=30  dbHits=0  day ASC
+    +EagerAggregation@neo4j  rows=30  dbHits=0  day, count(*) AS transfers, sum(amount) AS total_rwf
+      +Projection@neo4j  rows=20003300  dbHits=40006600  date(datetime({epochSeconds: cache[t.occurred_at], timezone: $autostring_0})) AS day, cache[t.amount_rwf] AS amount
+        +CacheProperties@neo4j  rows=20003300  dbHits=40006600  cache[t.occurred_at], cache[t.amount_rwf]
+          +DirectedRelationshipTypeScan@neo4j  rows=20003300  dbHits=20003301  ()-[t:TRANSFER]->()
+
+Total dbHits: 100,016,501 | result available after 95 ms, consumed after 25136 ms

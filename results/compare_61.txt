@@ -1,0 +1,102 @@
+  #  Q   case      SQL rows Cyp rows  status
+------------------------------------------------
+  1  Q1  A                1        1  MATCH
+  2  Q1  B                1        1  MATCH
+  3  Q1  C                1        1  MATCH
+  4  Q1  D                1        1  MATCH
+  5  Q1  E                1        1  MATCH
+  6  Q1  F                1        1  MATCH
+  7  Q2  month           30       30  MATCH
+  8  Q3  A                4        4  MATCH
+  9  Q3  B                9        9  MATCH
+ 10  Q3  C                9        9  MATCH
+ 11  Q3  D                4        4  MATCH
+ 12  Q3  E                9        9  MATCH
+ 13  Q3  F                9        9  MATCH
+ 14  Q4  A d4             2        2  MATCH
+ 15  Q4  A d6             5        5  MATCH
+ 16  Q4  A d8             5        5  MATCH
+ 17  Q4  A d10            5        5  MATCH
+ 18  Q4  B d4             5        5  MATCH
+ 19  Q4  B d6             5        5  MATCH
+ 20  Q4  B d8             5        5  MATCH
+ 21  Q4  B d10            5        5  MATCH
+ 22  Q4  C d4             5        5  MATCH
+ 23  Q4  C d6             5        5  MATCH
+ 24  Q4  C d8             5        5  MATCH
+ 25  Q4  C d10            5        5  MATCH
+ 26  Q4  D d4             3        3  MATCH
+ 27  Q4  D d6             5        5  MATCH
+ 28  Q4  D d8             5        5  MATCH
+ 29  Q4  D d10            5        5  MATCH
+ 30  Q4  E d4             5        5  MATCH
+ 31  Q4  E d6             5        5  MATCH
+ 32  Q4  E d8             5        5  MATCH
+ 33  Q4  E d10            5        5  MATCH
+ 34  Q4  F d4             5        5  MATCH
+ 35  Q4  F d6             5        5  MATCH
+ 36  Q4  F d8             5        5  MATCH
+ 37  Q4  F d10            5        5  MATCH
+ 38  Q5  A                1        1  MATCH
+ 39  Q5  B                1        1  MATCH
+ 40  Q5  C                1        1  MATCH
+ 41  Q5  D                0        0  MATCH
+ 42  Q5  E                0        0  MATCH
+ 43  Q5  F                0        0  MATCH
+ 44  Q6  A                1        1  MATCH
+ 45  Q6  B                0        0  MATCH
+ 46  Q6  C                1        1  MATCH
+ 47  Q6  D                0        0  MATCH
+ 48  Q6  E                0        0  MATCH
+ 49  Q6  F                0        0  MATCH
+ 50  Q7  A b4             1        1  MATCH
+ 51  Q7  A b6             1        1  MATCH
+ 52  Q7  B b4             0        1  MATCH
+ 53  Q7  B b6             1        1  MATCH
+ 54  Q7  C b4             0        1  MATCH
+ 55  Q7  C b6             1        1  MATCH
+ 56  Q7  D b4             1        1  MATCH
+ 57  Q7  D b6             1        1  MATCH
+ 58  Q7  E b4             0        1  MATCH
+ 59  Q7  E b6             1        1  MATCH
+ 60  Q7  F b4             0        1  MATCH
+ 61  Q7  F b6             1        1  MATCH
+
+=== Q7 LENGTHS AND SUPPORTING PATH CHECKS (IDs, direction, roles, event existence, length) ===
+A b4   length SQL    3 Cypher    3 | SQL path valid True events [20000001, 20000002, 20000003] | Cypher path valid True events [20000001, 20000002, 20000003]
+A b6   length SQL    3 Cypher    3 | SQL path valid True events [20000001, 20000002, 20000003] | Cypher path valid True events [20000001, 20000002, 20000003]
+B b4   length SQL None Cypher None | SQL path valid None events [] | Cypher path valid None events []
+B b6   length SQL    5 Cypher    5 | SQL path valid True events [4666377, 5984599, 6176316, 8125262, 20000096] | Cypher path valid True events [1873286, 15807632, 1654879, 8125262, 20000096]
+C b4   length SQL None Cypher None | SQL path valid None events [] | Cypher path valid None events []
+C b6   length SQL    5 Cypher    5 | SQL path valid True events [20000229, 20000230, 20000231, 20000232, 20000233] | Cypher path valid True events [20000229, 20000230, 20000231, 20000232, 20000233]
+D b4   length SQL    3 Cypher    3 | SQL path valid True events [20001651, 20001652, 20001653] | Cypher path valid True events [20001651, 20001652, 20001653]
+D b6   length SQL    3 Cypher    3 | SQL path valid True events [20001651, 20001652, 20001653] | Cypher path valid True events [20001651, 20001652, 20001653]
+E b4   length SQL None Cypher None | SQL path valid None events [] | Cypher path valid None events []
+E b6   length SQL    5 Cypher    5 | SQL path valid True events [20001742, 20001743, 20001744, 20001745, 20001746] | Cypher path valid True events [20001742, 20001743, 20001744, 20001745, 20001746]
+F b4   length SQL None Cypher None | SQL path valid None events [] | Cypher path valid None events []
+F b6   length SQL    5 Cypher    5 | SQL path valid True events [20001879, 20001880, 20001881, 20001882, 20001883] | Cypher path valid True events [20001879, 20001880, 20001881, 20001882, 20001883]
+
+=== 61-CASE STATUS SUMMARY ===
+Q1: 6/6 match
+Q2: 1/1 match
+Q3: 6/6 match
+Q4: 24/24 match
+Q5: 6/6 match
+Q6: 6/6 match
+Q7: 12/12 match
+TOTAL: 61/61 match | all Q7 supporting paths valid: True
+Saved results/compare_61.csv and results/compare_61_full.json
+
+=== INDEPENDENT CSV CHECKS (Python csv module, no database) ===
+Device overlap  998 [0,29]  24755 [0,29]  on device 228001 (handset)
+  CSV computed : (24755, 228001, 'handset', 0, 29)
+  Q3 database  : (24755, 228001, 'handset', 0, 29)
+  agree: True
+
+Cycle (set A) [20000001, 20000002, 20000003, 20000004] read from transfers.csv:
+  20000001: 998 -> 8917  2026-09-06 10:00:00 CAT  200,000 RWF
+  20000002: 8917 -> 16836  2026-09-06 10:00:40 CAT  196,000 RWF
+  20000003: 16836 -> 24755  2026-09-06 10:01:20 CAT  192,080 RWF
+  20000004: 24755 -> 998  2026-09-06 10:02:00 CAT  188,238 RWF
+  linked chain True | starts/ends at 998 True | first return only at end True | increasing & inside hour True | span 120 s <= 1800 True | amounts 90-105% True
+  all cycle rules confirmed from CSV: True

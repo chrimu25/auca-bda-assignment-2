@@ -1,0 +1,22 @@
+Q4: distinct other accounts reached through OWNS / USED_DEVICE (either direction), by owner region
+
+set  account depth  regions (SQL)                                                      total    SQL s   Cyp s  identical
+----------------------------------------------------------------------------------------------------------------------
+A        998     8  Eastern 30, Kigali 33, Northern 37, Southern 45, Western 30          175     0.13    0.42  YES
+A        998    10  Eastern 36, Kigali 35, Northern 37, Southern 45, Western 34          187     0.02    0.08  YES
+B     147228     8  Eastern 40, Kigali 33, Northern 35, Southern 47, Western 33          188     0.05    0.04  YES
+B     147228    10  Eastern 45, Kigali 41, Northern 46, Southern 57, Western 39          228     0.05    0.04  YES
+C     206978     8  Eastern 151, Kigali 172, Northern 167, Southern 186, Western 156     832     0.18    0.18  YES
+C     206978    10  Eastern 278, Kigali 293, Northern 295, Southern 294, Western 273    1433     0.13    0.04  YES
+D     237998     8  Eastern 32, Kigali 50, Northern 31, Southern 30, Western 37          180     0.01    0.01  YES
+D     237998    10  Eastern 34, Kigali 50, Northern 37, Southern 34, Western 37          192     0.00    0.00  YES
+E     144228     8  Eastern 33, Kigali 52, Northern 40, Southern 33, Western 35          193     0.00    0.00  YES
+E     144228    10  Eastern 40, Kigali 62, Northern 45, Southern 39, Western 44          230     0.01    0.00  YES
+F     203978     8  Eastern 161, Kigali 190, Northern 164, Southern 174, Western 148     837     0.02    0.01  YES
+F     203978    10  Eastern 278, Kigali 302, Northern 295, Southern 288, Western 263    1426     0.03    0.01  YES
+
+Comparisons: 12 | all identical: True | saved results/q4_network_8_10.csv
+Plot saved: results/q4_count_vs_depth_8_10.png
+
+Supporting path (Cypher SHORTEST 1), account 998 -> account 228917:
+  Account 998 -[USED_DEVICE]-  Device 228001 -[USED_DEVICE]-  Account 8917 -[OWNS]-  Customer 8917 -[OWNS]-  Account 228917   (length 4)

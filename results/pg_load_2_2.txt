@@ -1,0 +1,67 @@
+Pager usage is off.
+Timing is on.
+Time: 6.316 ms
+Loading started 2026-10-23 11:30:27.631293+02
+COPY 228000
+Time: 460.383 ms
+COPY 228600
+Time: 257.952 ms
+COPY 248000
+Time: 253.525 ms
+COPY 285600
+Time: 206.879 ms
+COPY 20003300
+Time: 9848.465 ms (00:09.848)
+Time: 0.272 ms
+SET
+Time: 0.107 ms
+Time: 0.097 ms
+ALTER TABLE
+Time: 59.649 ms
+ALTER TABLE
+Time: 55.061 ms
+ALTER TABLE
+Time: 56.654 ms
+ALTER TABLE
+Time: 51.412 ms
+ALTER TABLE
+Time: 6225.268 ms (00:06.225)
+ALTER TABLE
+Time: 55.430 ms
+ALTER TABLE
+Time: 52.309 ms
+ALTER TABLE
+Time: 113.325 ms
+ALTER TABLE
+Time: 2903.113 ms (00:02.903)
+ALTER TABLE
+Time: 3041.887 ms (00:03.042)
+CREATE INDEX
+Time: 51.559 ms
+CREATE INDEX
+Time: 56.092 ms
+CREATE INDEX
+Time: 15143.441 ms (00:15.143)
+CREATE INDEX
+Time: 15986.246 ms (00:15.986)
+CREATE INDEX
+Time: 808.524 ms
+ANALYZE
+Time: 17.617 ms
+ANALYZE
+Time: 22.911 ms
+ANALYZE
+Time: 13.803 ms
+ANALYZE
+Time: 24.923 ms
+ANALYZE
+Time: 120.140 ms
+Time: 2.044 ms
+
+================ 2.2 SUMMARY ================
+        load_start_cat         |         load_end_cat          | load_seconds |        setup_start_cat        |         setup_end_cat         | index_constraint_setup_seconds 
+-------------------------------+-------------------------------+--------------+-------------------------------+-------------------------------+--------------------------------
+ 2026-10-23 11:30:27.631293+02 | 2026-10-23 11:30:38.659857+02 |        11.03 | 2026-10-23 11:30:38.660153+02 | 2026-10-23 11:31:23.523051+02 |                          44.86
+(1 row)
+
+Time: 1.679 ms

@@ -1,0 +1,19 @@
+workload   engine clients     thr/s  median ms    p95 ms  err  to   cpu%
+Q4_d10         pg       1    107.67       4.82     19.19    0   0   16.5
+Q4_d10         pg       4    363.42       5.64     23.00    0   0   53.1
+Q4_d10         pg       8    439.93       9.80     40.42    0   0   99.9
+Q4_d10         pg      16    428.58      18.06     79.87    0   0   99.9
+Q4_d10        neo       1    413.98       2.00      5.95    0   0   22.4
+Q4_d10        neo       4   3106.59       0.76      2.27    0   0   69.3
+Q4_d10        neo       8   3973.18       1.43      5.12    0   0   98.7
+Q4_d10        neo      16   3850.24       1.91      8.48    0   0   98.9
+Q7_len_b6      pg       1     37.77      26.37     27.70    0   0   16.8
+Q7_len_b6      pg       4    112.66      34.82     39.02    0   0   54.3
+Q7_len_b6      pg       8    104.43      75.04     87.30    0   0   99.8
+Q7_len_b6      pg      16    103.72     147.71    169.22    0   0   99.8
+Q7_len_b6     neo       1    265.20       3.77      6.37    0   0   22.8
+Q7_len_b6     neo       4   1314.49       3.22      4.93    0   0   54.6
+Q7_len_b6     neo       8   2402.12       3.03      6.46    0   0   99.6
+Q7_len_b6     neo      16   2432.90       4.39     17.70    0   0   99.3
+
+Saved results/load/summary_7.csv, throughput_rps_vs_clients.png, p95_ms_vs_clients.png
