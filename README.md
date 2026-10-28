@@ -2,8 +2,9 @@
 
 MSc Advanced Big Data Analytics, AUCA, 2026
 
-**Group members:** _[Member 1 name, ID]_ · _[Member 2 name, ID]_ · _[Member 3 name, ID]_ · _[Member 4 name, ID]_
-**Repository:** _[GitHub URL]_
+
+**Group members:** _BUYANGE B. Aline, 101367_ · _MUGABO MUTSINZI CHRISTIAN, 101226_ · _UWIZEYE CHRISTELLE, 101465_
+**Repository:** _[\[GitHub URL\]](https://github.com/chrimu25/auca-bda-assignment-2/)_
 
 We load the same mobile money data into PostgreSQL (tables) and Neo4j (graph), answer seven investigation questions (Q1–Q7) in both, check that the answers agree, then compare speed, load time, storage and concurrent use.
 
